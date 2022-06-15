@@ -1,5 +1,5 @@
 # vavaEsphomeRemotePower
-Use an ESP32 dev board with Home Assistant to control the power state on the original vava projector that requires a bluetooth remote
+Use an ESP32 dev board with Home Assistant to control the power state on the original vava projector which requires a bluetooth remote
 
 
 1. Acquire an ESP32 dev board.  Recommended: ESP32-WROOM-32D, if you use another, you MIGHT need to modify the board type in vavaremote.yaml below.   Lots of info on these devices over here: https://microcontrollerslab.com/esp32-development-board/
