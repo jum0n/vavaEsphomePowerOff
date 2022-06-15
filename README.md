@@ -1,4 +1,4 @@
-# vavaEsphomeRemoteKeyboard
+# vavaEsphomeRemotePower
 Use an esp32 to control the power switch on your vava projector
 
 
