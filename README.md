@@ -1,5 +1,5 @@
 # vavaEsphomePowerOff
-Use an ESP32 dev board with Home Assistant to remotely/automatically power off the original vava projector which requires a bluetooth remote.
+Use an ESP32 dev board with Home Assistant to automate power off of the original vava projector which requires a bluetooth remote.
   
   NOTE: This does NOT power ON the projector since the bluetooth connection is disconnected by the projector when it powers off.
   
