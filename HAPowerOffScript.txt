@@ -1,0 +1,7 @@
+alias: Vava Power
+sequence:
+  - service: esphome.blekeyboard_send
+    data:
+      message: KEY_MEDIA_POWER
+      delay_ms: 0
+mode: single
