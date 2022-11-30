@@ -5,6 +5,8 @@ Use an ESP32 dev board with Home Assistant to automate power off of the original
   
   -All credit to Cosmos_Explorer1 for figuring this out, this is just a more concise and easier method based on his post on reddit.
 
+* You should already have Home Assitant (HA) setup on some platform before you start the steps below.  If you do not, there may be a learning curve with some of the steps.  I assume you have access to HA, a way to access the storage of HA directly (use "samba share" add-on perhaps), and working knowledge of how to create an automation based on a state/value change.
+
 1. Acquire an ESP32 dev board.  Recommended: ESP32-WROOM-32D, if you use another, you MIGHT need to modify the board type in blekeyboard.yaml file.
 2. Install ESPHome on Home Assistant (HA).  Lots of detailed info here: https://esphome.io/guides/getting_started_hassio.html
 3. Add the "inc" folder and its contents to your ESPHome folder on your Home Assistant instance/device/storage (typically /config/esphome/).
