@@ -7,11 +7,11 @@ Use an ESP32 dev board with Home Assistant to automate power off of the original
 
 1. Acquire an ESP32 dev board.  Recommended: ESP32-WROOM-32D, if you use another, you MIGHT need to modify the board type in blekeyboard.yaml file.
 2. Install ESPHome on Home Assistant (HA).  Lots of detailed info here: https://esphome.io/guides/getting_started_hassio.html
-3. Add the "inc" folder and its contents to your ESPHome folder (typically /config/esphome/).
-4. Add the proper entries for wifi_ssid, wifi_password, ota_password, and api_password to your secrets.yaml file in the ESPhome folder.  I have included an example if you dont already have one, but it must be customized.
+3. Add the "inc" folder and its contents to your ESPHome folder on your Home Assistant instance/device/storage (typically /config/esphome/).
+4. Add the proper entries for wifi_ssid, wifi_password, ota_password, and api_password to your secrets.yaml file in the ESPhome folder.  I have included an example if you dont already have these, but it must be customized with your desired passwords.  The ESPhome web interface now has a button for this in the upper right corner, but you may need to create the file first for this button to appear.
 5. In the ESPhome web interface, create a new device using the code from the "blekeyboard.yaml" file.  This will require you to cable the ESP32 to your system (the first time) and use the Chrome browser to program it.  There is usually a small button on the ESP32 devices that might need to be held when powering it on to put it into programming mode.  You may create the device with all defaults, then edit the config and replace default content and re-install to the device.
-6. Once the ESP32 board is online, move it near the vava projector, power it on, and then add it as a bluetooth device in the projector menu and ensure it shows "connected" (may need to power cycle the projector after pairing to get the status to "connected").
+6. Once the ESP32 board is online, move it near the vava projector, power it on, and then add it as a bluetooth device in the projector menu and ensure it shows "connected" (may need to power cycle the projector after pairing to get the status to "connected").  Please be sure it shows "connected" before continuing on, this can take many attempts but once done, it is stable.
 7. In HA add the newly discovered "blekeyboard" device using the password specified in api_password.
-8. Create a script to send KEY_MEDIA_POWER as text to the blekeyboard entity. (example included: HAPowerOffScript.txt)
-9. Create your automation and call this script to power off the vava projector.
-10. PROFIT!
+8. Create a script in HA to send KEY_MEDIA_POWER as text to the blekeyboard entity. (example included: HAPowerOffScript.txt)
+9. Create your automation in HA and call the new script created above to power off the vava projector.  I trigger this automation to happen when my receiver is shut down using the power monitoring values of a Kasa KP115 I added inline (and using the "TP-Link Kasa Smart" integration), but you could trigger it off any unique event that means you want the projector powered off.
+10. Done!
