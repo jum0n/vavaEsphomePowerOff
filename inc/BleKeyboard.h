@@ -7,6 +7,8 @@
 
 #include "NimBLECharacteristic.h"
 #include "NimBLEHIDDevice.h"
+#include "NimBLEServer.h"
+#include "NimBLEAdvertising.h"
 
 #define BLEDevice                  NimBLEDevice
 #define BLEServerCallbacks         NimBLEServerCallbacks
@@ -148,9 +150,15 @@ public:
   void set_version(uint16_t version);
 protected:
   virtual void onStarted(BLEServer *pServer) { };
+#if defined(USE_NIMBLE)
+  virtual void onConnect(BLEServer* pServer, NimBLEConnInfo& connInfo) override;
+  virtual void onDisconnect(BLEServer* pServer, NimBLEConnInfo& connInfo, int reason) override;
+  virtual void onWrite(BLECharacteristic* me, NimBLEConnInfo& connInfo) override;
+#else
   virtual void onConnect(BLEServer* pServer) override;
   virtual void onDisconnect(BLEServer* pServer) override;
   virtual void onWrite(BLECharacteristic* me) override;
+#endif
 
 };
 
